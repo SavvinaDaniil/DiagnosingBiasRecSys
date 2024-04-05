@@ -1,5 +1,5 @@
-# set environment variables
 import numpy as np
+import os
 
 # basic functions
 import matplotlib
@@ -281,6 +281,7 @@ def plot_results(
     fig.set_figwidth(20)
     fig.tight_layout(pad=3.0)
     if save_plot:
+        os.makedirs(f"graphs/{algo_name}/", exist_ok=True)
         plt.savefig(
             "graphs/" + algo_name + "/" + data_strategy + "_" + str(args) + ".png"
         )
