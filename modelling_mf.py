@@ -112,7 +112,7 @@ def calculate_average_PL(GAP_vs_GAP):
     return ave_PL
 
 def calculate_pop_correlation(pop_bias):
-    return stats.pearsonr(pop_bias.profile, pop_bias.recommendation)[0]
+    return stats.pearsonr(pop_bias.profile, pop_bias.recommendation)
 
 
 def calculate_all_pb_metrics(pop_bias, test_users, item_col, user_col, train_df, recs_grouped, recs):
