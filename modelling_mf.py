@@ -373,7 +373,7 @@ def train_algorithm_cornac(
             ),
             test_data=list(test_df[["user", "item", "rating"]].to_records(index=False)),
             exclude_unknowns=False,
-            verbose=False,
+            verbose=True,
         )
 
         models = [algorithm]
@@ -467,6 +467,7 @@ def train_algorithm_cornac(
 
         for i, tp in sets:
             train_df = tp[0]
+            print(train_df)
             test_df = tp[1]
             eval_method = BaseMethod.from_splits(
                 train_data=list(
@@ -476,8 +477,10 @@ def train_algorithm_cornac(
                     test_df[["user", "item", "rating"]].to_records(index=False)
                 ),
                 exclude_unknowns=False,
-                verbose=False,
+                verbose=verbose,
             )
+            if verbose:
+                print("Splits made!")
             models = [algorithm]
             metrics = [RMSE()]
             exp = cornac.Experiment(
@@ -488,7 +491,11 @@ def train_algorithm_cornac(
                 save_dir="cornacLogs",
                 verbose=verbose,
             )
+            if verbose:
+                print("Experiment made!")
             exp.run()
+            if verbose:
+                print("Experiment ran!")
             loss = exp.result[0].metric_avg_results["RMSE"]
             total_loss += loss
             if verbose:
@@ -508,14 +515,20 @@ def train_algorithm_cornac(
             pop_bias = calculate_pop_bias_per_item(
                 all_items, item_col, user_col, predict_col, train_df, recs
             )
+            if verbose:
+                print("Pop bias!")
             GAP_vs_GAP = calculate_ave_pop_per_user(
                 test_users, item_col, user_col, pop_bias, train_df, recs_grouped
             )
+            if verbose:
+                print("GAP GAP!")
             # ACLT = calculate_ACLT(train_df, recs, user_col, item_col, limit = 0.2)
             # ACST = calculate_ACST(train_df, recs, user_col, item_col, limit = 0.2)
             ARP, ave_PL, ACLT = calculate_all_pb_metrics(
                 pop_bias, test_users, item_col, user_col, train_df, recs_grouped, recs
             )
+            if verbose:
+                print("all metrics!")
             # print(ARP, ave_PL, ACLT, ACST, AggDiv)
             # total_ACST += ACST
             total_ACLT += ACLT
