@@ -493,6 +493,8 @@ def train_algorithm_cornac(
             )
             if verbose:
                 print("Experiment made!")
+            import pdb
+            pdb.set_trace()
             exp.run()
             if verbose:
                 print("Experiment ran!")
@@ -501,8 +503,6 @@ def train_algorithm_cornac(
             if verbose:
                 print("Training done!")
 
-            import pdb
-            pdb.set_trace()
 
             test_users = test_df.user.unique()  # the users in the test set
             recs, stdev_20 = recommend_cornac(
