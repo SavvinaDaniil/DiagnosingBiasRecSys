@@ -501,6 +501,9 @@ def train_algorithm_cornac(
             if verbose:
                 print("Training done!")
 
+            import pdb
+            pdb.set_trace()
+
             test_users = test_df.user.unique()  # the users in the test set
             recs, stdev_20 = recommend_cornac(
                 exp=exp, all_items=all_items, user_col=user_col, item_col=item_col, n=n
@@ -728,6 +731,7 @@ def train_algorithm(
 
             if verbose:
                 print(i, "Training done!")
+
 
             preds = batch.predict(algo=fittable, pairs=test_df)
             loss = np.round(rmse(preds.prediction, preds.rating), 2)
