@@ -465,7 +465,7 @@ def train_algorithm_cornac(
 
         # sets_list = enumerate(xf.partition_users(ratings,5, sample, rng_spec=0))
 
-        for i, tp in sets[::-1]:
+        for i, tp in sets:
             train_df = tp[0]
             print(train_df)
             test_df = tp[1]
