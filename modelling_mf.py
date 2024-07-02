@@ -481,7 +481,7 @@ def train_algorithm_cornac(
             )
             if verbose:
                 print("Splits made!")
-            models = [algorithm]
+            models = [algorithm()]
             metrics = [RMSE()]
             exp = cornac.Experiment(
                 eval_method=eval_method,
@@ -493,8 +493,7 @@ def train_algorithm_cornac(
             )
             if verbose:
                 print("Experiment made!")
-            import pdb
-            pdb.set_trace()
+
             exp.run()
             if verbose:
                 print("Experiment ran!")

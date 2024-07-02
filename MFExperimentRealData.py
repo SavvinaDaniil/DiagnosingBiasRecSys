@@ -288,7 +288,7 @@ for args in versions:
     optimal_lr = best_params["learning_rate"]
 
     pop_biases_cornac, metrics_dict_cornac = modelling_mf.train_algorithm_cornac(
-        algorithm=algorithm_cornac(
+        algorithm= lambda: algorithm_cornac(
             k=optimal_k,
             use_bias=args["bias"],
             lambda_reg=optimal_reg,
