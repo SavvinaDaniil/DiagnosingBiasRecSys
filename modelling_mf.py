@@ -376,7 +376,7 @@ def train_algorithm_cornac(
             verbose=True,
         )
 
-        models = [algorithm]
+        models = [algorithm()]
         metrics = [RMSE()]
         exp = cornac.Experiment(
             eval_method=eval_method,
@@ -467,7 +467,7 @@ def train_algorithm_cornac(
 
         for i, tp in sets:
             train_df = tp[0]
-            print(train_df)
+            # print(train_df)
             test_df = tp[1]
             eval_method = BaseMethod.from_splits(
                 train_data=list(
@@ -624,10 +624,10 @@ def train_algorithm(
         train_df, test_df = sets[0][1]
 
         if fallback:
-            algo_w_f = basic.Fallback(algorithm, basic.Bias())
+            algo_w_f = basic.Fallback(algorithm(), basic.Bias())
             fittable = util.clone(algo_w_f)
         else:
-            fittable = util.clone(algorithm)
+            fittable = util.clone(algorithm())
 
         fittable = Recommender.adapt(fittable)
         fittable.fit(train_df)
@@ -720,10 +720,10 @@ def train_algorithm(
             test_df = tp[1]
 
             if fallback:
-                algo_w_f = basic.Fallback(algorithm, basic.Bias())
+                algo_w_f = basic.Fallback(algorithm(), basic.Bias())
                 fittable = util.clone(algo_w_f)
             else:
-                fittable = util.clone(algorithm)
+                fittable = util.clone(algorithm())
 
             fittable = Recommender.adapt(fittable)
             fittable.fit(train_df)
