@@ -448,7 +448,7 @@ def train_algorithm_cornac(
                 data_strategy=data_strategy,
                 save_plot=save_plot,
             )
-        return pop_biases, metrics_dict
+        return pop_biases, metrics_dict, GAP_vs_GAP
 
     elif evaluation_way == "cross_validation":
         total_loss = 0.0
@@ -585,7 +585,7 @@ def train_algorithm_cornac(
                 save_plot=save_plot,
             )
 
-        return pop_biases, metrics_dict
+        return pop_biases, metrics_dict, total_GAP_vs_GAP
 
 
 def train_algorithm(
@@ -700,7 +700,7 @@ def train_algorithm(
                 data_strategy=data_strategy,
                 save_plot=save_plot,
             )
-        return pop_biases, metrics_dict
+        return pop_biases, metrics_dict, GAP_vs_GAP
 
     elif evaluation_way == "cross_validation":
         total_loss = 0.0
@@ -821,4 +821,4 @@ def train_algorithm(
                 save_plot=save_plot,
             )
 
-        return pop_biases, metrics_dict
+        return pop_biases, metrics_dict, total_GAP_vs_GAP
