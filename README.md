@@ -2,7 +2,7 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.8-blue)
 
-Welcome to the Diagnosing Bias in Recommender Systems repository! In this project, we experiment with detecting bias in recommender systems. By following the steps below, you can set up the environment and run the provided Jupyter notebooks to conduct popularity bias analysis.
+Welcome to the Diagnosing Bias in Recommender Systems repository! In this project, we experiment with detecting popularity bias in recommender systems using the frameworks Lenskit and Cornac, and testing the algorithms UserKNN and BMF. By following the steps below, you can set up the environment and run the provided Jupyter notebooks to conduct popularity bias analysis.
 
 ## Table of Contents
 
