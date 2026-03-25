@@ -56,3 +56,5 @@ Once you have completed the installation steps, you can now run the bias analysi
 
 2. Open the notebooks from the project directory. Each notebook performs a different process by calling the appropriate widget. You can select which algorithm and which dataset you wish to perform the process on.
 
+
+*This research was carried out with funding from the KB National Library of the Netherlands.*
