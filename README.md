@@ -57,4 +57,23 @@ Once you have completed the installation steps, you can now run the bias analysi
 2. Open the notebooks from the project directory. Each notebook performs a different process by calling the appropriate widget. You can select which algorithm and which dataset you wish to perform the process on.
 
 
-*This research was carried out with funding from the KB National Library of the Netherlands.*
+## 📄 Citation
+This repository accompanies the paper  
+[On the challenges of studying bias in Recommender Systems: The effect of data characteristics and algorithm configuration](https://doi.org/10.54195/irrj.19607),  
+published in *Information Retrieval Research*, 1(1), pp. 3–27 (2025).
+The research was carried out with funding from the KB National Library of the Netherlands.
+If you use this code, please cite:
+
+```bibtex
+@article{daniil2025bias,
+  title={On the challenges of studying bias in Recommender Systems: The effect of data characteristics and algorithm configuration},
+  author={Daniil, Savvina and Slokom, Manel and Cuper, Mirjam and Liem, Cynthia and van Ossenbruggen, Jacco and Hollink, Laura},
+  journal={Information Retrieval Research},
+  volume={1},
+  number={1},
+  pages={3--27},
+  year={2025},
+  doi={10.54195/irrj.19607}
+}
+
+
